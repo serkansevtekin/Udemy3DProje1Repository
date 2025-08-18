@@ -1,3 +1,4 @@
+using UdemyPorject1.Movement;
 using UdemyProject1.Inputs;
 using UnityEngine;
 
@@ -6,17 +7,16 @@ namespace UdemyPorject1.Controllers
 
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField] float _force;
-        private Rigidbody _rigithBody;
 
+        Mover _mover;
         DefaultInput _defaultInput;
 
         bool _isForceUp;
         private void Awake()
         {
-            _rigithBody = GetComponent<Rigidbody>();//Cache yapıyoruz burada
+
             _defaultInput = new DefaultInput();
-          
+            _mover = new Mover(GetComponent<Rigidbody>());
 
         }
         void Update()
@@ -24,7 +24,7 @@ namespace UdemyPorject1.Controllers
             //input - klavye basışları
             if (_defaultInput.IsForceUp)
             {
-           
+
                 _isForceUp = true;
             }
             else
@@ -37,10 +37,7 @@ namespace UdemyPorject1.Controllers
         private void FixedUpdate()
         {
             // fizik işlemleri
-            if (_isForceUp)
-            {
-                _rigithBody.AddForce(Vector3.up * Time.deltaTime * _force);   
-            }
+            _mover.FixedTick(isForceUp: _isForceUp);
         }
     }
 
