@@ -8,6 +8,8 @@ namespace UdemyPorject1.Controllers
     public class PlayerController : MonoBehaviour
     {
 
+
+        [SerializeField] float _forecSpeed = 55;
         Mover _mover;
         DefaultInput _defaultInput;
 
@@ -37,7 +39,7 @@ namespace UdemyPorject1.Controllers
         private void FixedUpdate()
         {
             // fizik işlemleri
-            _mover.FixedTick(isForceUp: _isForceUp);
+            _mover.FixedTick(isForceUp: _isForceUp, forceSpeed: _forecSpeed);
         }
     }
 

@@ -14,12 +14,12 @@ namespace UdemyPorject1.Movement
           }
 
 
-        public void FixedTick(bool isForceUp)
+        public void FixedTick(bool isForceUp,float forceSpeed)
         {
            
             if (isForceUp)
             {
-                _rigidBody.AddRelativeForce(Vector3.up * Time.deltaTime * 55f); //Pozisyonumuza göre force veriyor
+                _rigidBody.AddRelativeForce(Vector3.up * Time.deltaTime * forceSpeed); //Pozisyonumuza göre force veriyor
             }
         }
 
