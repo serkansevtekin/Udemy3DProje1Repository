@@ -102,6 +102,15 @@ namespace UdemyProject1.Inputs
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LeftRight"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""1397a9b4-744b-4c48-b28b-dd472319c96a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -115,6 +124,39 @@ namespace UdemyProject1.Inputs
                     ""action"": ""ForceUp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""AD"",
+                    ""id"": ""9a5c38d2-5dd0-48f7-885e-c33549fef4b7"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftRight"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""347405bb-5ef9-4a84-8ecb-656413d29170"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""b7f41a7b-357b-4d94-88c8-10152c3906eb"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -124,6 +166,7 @@ namespace UdemyProject1.Inputs
             // Rocket
             m_Rocket = asset.FindActionMap("Rocket", throwIfNotFound: true);
             m_Rocket_ForceUp = m_Rocket.FindAction("ForceUp", throwIfNotFound: true);
+            m_Rocket_LeftRight = m_Rocket.FindAction("LeftRight", throwIfNotFound: true);
         }
 
         ~@DefaultActions()
@@ -205,6 +248,7 @@ namespace UdemyProject1.Inputs
         private readonly InputActionMap m_Rocket;
         private List<IRocketActions> m_RocketActionsCallbackInterfaces = new List<IRocketActions>();
         private readonly InputAction m_Rocket_ForceUp;
+        private readonly InputAction m_Rocket_LeftRight;
         /// <summary>
         /// Provides access to input actions defined in input action map "Rocket".
         /// </summary>
@@ -220,6 +264,10 @@ namespace UdemyProject1.Inputs
             /// Provides access to the underlying input action "Rocket/ForceUp".
             /// </summary>
             public InputAction @ForceUp => m_Wrapper.m_Rocket_ForceUp;
+            /// <summary>
+            /// Provides access to the underlying input action "Rocket/LeftRight".
+            /// </summary>
+            public InputAction @LeftRight => m_Wrapper.m_Rocket_LeftRight;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -249,6 +297,9 @@ namespace UdemyProject1.Inputs
                 @ForceUp.started += instance.OnForceUp;
                 @ForceUp.performed += instance.OnForceUp;
                 @ForceUp.canceled += instance.OnForceUp;
+                @LeftRight.started += instance.OnLeftRight;
+                @LeftRight.performed += instance.OnLeftRight;
+                @LeftRight.canceled += instance.OnLeftRight;
             }
 
             /// <summary>
@@ -263,6 +314,9 @@ namespace UdemyProject1.Inputs
                 @ForceUp.started -= instance.OnForceUp;
                 @ForceUp.performed -= instance.OnForceUp;
                 @ForceUp.canceled -= instance.OnForceUp;
+                @LeftRight.started -= instance.OnLeftRight;
+                @LeftRight.performed -= instance.OnLeftRight;
+                @LeftRight.canceled -= instance.OnLeftRight;
             }
 
             /// <summary>
@@ -310,6 +364,13 @@ namespace UdemyProject1.Inputs
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnForceUp(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "LeftRight" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnLeftRight(InputAction.CallbackContext context);
         }
     }
 }

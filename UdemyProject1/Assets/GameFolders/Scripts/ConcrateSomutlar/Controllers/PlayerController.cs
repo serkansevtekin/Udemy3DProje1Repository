@@ -9,17 +9,24 @@ namespace UdemyPorject1.Controllers
     {
 
 
-        [SerializeField] float _forecSpeed = 55;
+        [SerializeField] float _forceSpeed = 55f;
+        [SerializeField] float _turnSpeed = 10f;
+    
+
         Mover _mover;
+        Rotator _rotator;
         DefaultInput _defaultInput;
 
         bool _isForceUp;
+        float _leftRight;
+        public float TurnSpeed => _turnSpeed;
+        public float ForceSpeed => _forceSpeed;
         private void Awake()
         {
 
             _defaultInput = new DefaultInput();
-            _mover = new Mover(GetComponent<Rigidbody>());
-
+            _mover = new Mover(this);
+            _rotator = new Rotator(this);
         }
         void Update()
         {
@@ -34,12 +41,16 @@ namespace UdemyPorject1.Controllers
                 _isForceUp = false;
             }
 
+            _leftRight = _defaultInput.LeftRight;
+
         }
 
         private void FixedUpdate()
         {
             // fizik işlemleri
-            _mover.FixedTick(isForceUp: _isForceUp, forceSpeed: _forecSpeed);
+            _mover.FixedTick(isForceUp: _isForceUp);
+
+            _rotator.FixedTick(_leftRight,isForceUp:_isForceUp);
         }
     }
 
