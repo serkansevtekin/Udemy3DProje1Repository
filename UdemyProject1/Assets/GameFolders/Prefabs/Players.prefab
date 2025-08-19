@@ -130,6 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7749973372410758275}
   - component: {fileID: 1660424093294558642}
+  - component: {fileID: 2446419809242779754}
   - component: {fileID: 1182962987067053532}
   - component: {fileID: 3453153770258146685}
   m_Layer: 0
@@ -171,6 +172,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _forceSpeed: 30
   _turnSpeed: 50
+--- !u!114 &2446419809242779754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7489323496672201099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d16a7928805a144e28449e06fb388ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxFuel: 100
+  _currentFuel: 0
+  _particleRocketFire: {fileID: 4752405805575476536}
 --- !u!65 &1182962987067053532
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -414,6 +430,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: 1c20c7996d683754db1f0f62a361952c, type: 3}
   m_PrefabInstance: {fileID: 4752405805561187066}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &4752405805575476536 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19800002, guid: 1c20c7996d683754db1f0f62a361952c, type: 3}
+  m_PrefabInstance: {fileID: 4752405805561187066}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6239736192098233347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -425,6 +446,10 @@ PrefabInstance:
     - target: {fileID: 100004, guid: 1c20c7996d683754db1f0f62a361952c, type: 3}
       propertyPath: m_Name
       value: CFX4 Fire left
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 1c20c7996d683754db1f0f62a361952c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 1c20c7996d683754db1f0f62a361952c, type: 3}
       propertyPath: m_LocalScale.x
@@ -499,6 +524,10 @@ PrefabInstance:
     - target: {fileID: 100004, guid: 1c20c7996d683754db1f0f62a361952c, type: 3}
       propertyPath: m_Name
       value: CFX4 Fire right
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 1c20c7996d683754db1f0f62a361952c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 1c20c7996d683754db1f0f62a361952c, type: 3}
       propertyPath: m_LocalScale.x

@@ -274,31 +274,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1664640860478726629, guid: bf5f18dc0f92a4930b61b4d2f545c4e5, type: 3}
   m_PrefabInstance: {fileID: 1006845744}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1146953885 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3884150506408076687, guid: ed08b801f4cc440cabd47216fec8c711, type: 3}
-  m_PrefabInstance: {fileID: 4258656234791201850}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1146953889 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 89423132066269052, guid: ed08b801f4cc440cabd47216fec8c711, type: 3}
   m_PrefabInstance: {fileID: 4258656234791201850}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1146953890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1146953885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4700f9f03ad19f94baf0367cb7a9c988, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Width: 6.98
-  Damping: 1
-  FovRange: {x: 46.83581, y: 103.835815}
 --- !u!1001 &1466864332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -307,18 +287,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1660424093294558642, guid: 8c32f0576565f4a2999b71626f5035f6, type: 3}
-      propertyPath: _turnSpeed
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1660424093294558642, guid: 8c32f0576565f4a2999b71626f5035f6, type: 3}
-      propertyPath: _forceSpeed
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 3453153770258146685, guid: 8c32f0576565f4a2999b71626f5035f6, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0.05
-      objectReference: {fileID: 0}
     - target: {fileID: 7489323496672201099, guid: 8c32f0576565f4a2999b71626f5035f6, type: 3}
       propertyPath: m_Name
       value: Players
@@ -671,10 +639,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3884150506408076687, guid: ed08b801f4cc440cabd47216fec8c711, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1146953890}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed08b801f4cc440cabd47216fec8c711, type: 3}
 --- !u!1001 &4563468507861002311
 PrefabInstance:
@@ -785,14 +750,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2469631998463742161, guid: e1f66f5c4262846d99f017e5c669b1b9, type: 3}
-      propertyPath: m_RenderPostProcessing
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6368855477894513707, guid: e1f66f5c4262846d99f017e5c669b1b9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -854,26 +811,6 @@ PrefabInstance:
     - target: {fileID: 7809392801399761637, guid: 880004b7c3ca64afebf4889f38e20e14, type: 3}
       propertyPath: m_Name
       value: GameLight
-      objectReference: {fileID: 0}
-    - target: {fileID: 7809392801399761637, guid: 880004b7c3ca64afebf4889f38e20e14, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7810519955283574319, guid: 880004b7c3ca64afebf4889f38e20e14, type: 3}
-      propertyPath: m_Intensity
-      value: 0.73
-      objectReference: {fileID: 0}
-    - target: {fileID: 7810519955283574319, guid: 880004b7c3ca64afebf4889f38e20e14, type: 3}
-      propertyPath: m_Lightmapping
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7810519955283574319, guid: 880004b7c3ca64afebf4889f38e20e14, type: 3}
-      propertyPath: m_Shadows.m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7810519955283574319, guid: 880004b7c3ca64afebf4889f38e20e14, type: 3}
-      propertyPath: m_ColorTemperature
-      value: 5773
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
