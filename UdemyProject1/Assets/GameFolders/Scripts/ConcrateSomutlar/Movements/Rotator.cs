@@ -55,7 +55,26 @@ namespace UdemyPorject1.Movement
             }
             if (isForceUp)
             {
-                //fizik motoru ile döndürme
+                
+                ///<summary>
+                /// fizik motoru ile döndürme
+                /// </summary>
+                /// <remarks >
+                /// 1. Quaternion:
+                ///     Unity'de dönüşleri temsil eden veri yapısıdır.
+                ///     Rotation (yönelim) bilgisi tutar ve matematiksel olarak objeyi döndürür.
+                /// 
+                /// 2. Quaternion.Euler():
+                ///     Eular açılarını kullanarak bir Quaternion (dönüş) oluşturur.
+                ///     Euler açılarını (x, y, z derece) Quaternion’a çevirir.
+                ///     Burada Vector3.back ile Z ekseninde, Time.deltatime, direction ve         TurnSpeed çarpımıyla küçük bir dönüş açısı hesaplanır.
+                /// 
+                /// 3. _rigidbody.MoveRotation():
+                ///     Rigidbody'nin mevcut rotasyonuna turnOffset eklenir ve fizik motoru ile uyumlu bir şekilde uygulanır.
+                ///     Fizik motoruyla uyumlu olduğundan, çarpışmalar ve kuvvetlerle çakışmaz.
+                ///     Böylece roket, fizik motoru ile çakışmadan döner.
+                /// </remarks>
+                
                 Quaternion turnOffset = Quaternion.Euler(Vector3.back * Time.deltaTime * direction * _playerController.TurnSpeed);
                 _rigidbody.MoveRotation(_rigidbody.rotation * turnOffset);
 
