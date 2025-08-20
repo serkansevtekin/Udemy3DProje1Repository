@@ -8,9 +8,12 @@ namespace UdemyPorject1.Controllers
         //Unity çarpışma konrolü metodu
         void OnCollisionEnter(Collision other)
         {
-            // Çarpışılan nesenenin coliderini alıyoruz => = other.collider.GetComponent<PlayerController>();
-            // Sonra o colider'ın bağlı olduğu GameObject'te PlayerController SCRİPT varmı diye bakıyor => PlayerController playerController =
-            //Eğer varsa playerController değişkene atıyor. Yok ise " null " döndürüyor
+             ///<summary>
+            /// other.collider → Çarpışma olan collider’ı alıyor.
+            ///.GetComponent<PlayerController>() → Bu collider’ın bağlı olduğu GameObject üzerinde PlayerController script’i var mı diye kontrol ediyor.
+            /// Eğer varsa → script component’i player değişkenine atanıyor
+            /// Eğer yoksa → player değişkeni null oluyor.
+            /// </summary>
             PlayerController playerController = other.collider.GetComponent<PlayerController>();
 
             //Çarptığımız nesene oyuncu nesnesimi diye kontrol ediyoruz. 

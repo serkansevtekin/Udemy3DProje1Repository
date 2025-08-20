@@ -893,51 +893,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 380861320744541523, guid: 4dde0b9d188dd4698bc956a3706e844e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 380861320744541523, guid: 4dde0b9d188dd4698bc956a3706e844e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 380861320744541523, guid: 4dde0b9d188dd4698bc956a3706e844e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 380861320744541523, guid: 4dde0b9d188dd4698bc956a3706e844e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1575729885428224916, guid: 4dde0b9d188dd4698bc956a3706e844e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1657015804000903264, guid: 4dde0b9d188dd4698bc956a3706e844e, type: 3}
-      propertyPath: m_Type
-      value: 2
+      value: 14.2
       objectReference: {fileID: 0}
     - target: {fileID: 1657015804000903264, guid: 4dde0b9d188dd4698bc956a3706e844e, type: 3}
       propertyPath: m_Range
-      value: 7.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1657015804000903264, guid: 4dde0b9d188dd4698bc956a3706e844e, type: 3}
-      propertyPath: m_Color.b
-      value: 0.9433962
-      objectReference: {fileID: 0}
-    - target: {fileID: 1657015804000903264, guid: 4dde0b9d188dd4698bc956a3706e844e, type: 3}
-      propertyPath: m_Color.g
-      value: 0.9433962
-      objectReference: {fileID: 0}
-    - target: {fileID: 1657015804000903264, guid: 4dde0b9d188dd4698bc956a3706e844e, type: 3}
-      propertyPath: m_Color.r
-      value: 0.9433962
+      value: 3.7
       objectReference: {fileID: 0}
     - target: {fileID: 1657015804000903264, guid: 4dde0b9d188dd4698bc956a3706e844e, type: 3}
       propertyPath: m_Intensity
-      value: 1.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 1657015804000903264, guid: 4dde0b9d188dd4698bc956a3706e844e, type: 3}
-      propertyPath: m_BounceIntensity
-      value: 1
+      value: 11.54
       objectReference: {fileID: 0}
     - target: {fileID: 7754451208783647687, guid: 4dde0b9d188dd4698bc956a3706e844e, type: 3}
       propertyPath: m_LocalPosition.x
