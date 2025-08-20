@@ -55,7 +55,7 @@ namespace UdemyPorject1.Controllers
             // fizik işlemleri
             _mover.FixedTick(isForceUp: _canForceUp);
 
-            _rotator.FixedTick(_leftRight, isForceUp: _canForceUp);
+            _rotator.FixedTick(direction: _leftRight, isForceUp: _canForceUp);
         }
     }
 
