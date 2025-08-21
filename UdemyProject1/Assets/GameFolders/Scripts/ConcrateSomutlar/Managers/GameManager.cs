@@ -66,7 +66,7 @@ namespace UdemyProject1.Managers
 
         }
 
-        public void LoadMenu()
+        public void LoadMenuScene()
         {
             StartCoroutine(LoadMenuSceneAsync());
         }
