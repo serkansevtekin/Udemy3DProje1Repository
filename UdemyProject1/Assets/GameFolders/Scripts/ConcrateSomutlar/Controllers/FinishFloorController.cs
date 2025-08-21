@@ -1,16 +1,36 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class FinishFloorController : MonoBehaviour
+namespace UdemyPorject1.Controllers
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class FinishFloorController : MonoBehaviour
     {
-        
+
+        [SerializeField] GameObject _finishFloorFirework;
+        [SerializeField] GameObject _finishFloorLight;
+
+        void OnCollisionEnter(Collision other)
+        {
+            PlayerController player = other.collider.GetComponent<PlayerController>();
+
+            if (player = null)
+            {
+                return;
+            }
+            if (other.GetContact(0).normal.y == -1) // Tependen değip deymediğini kontroll edioruz
+            {
+                _finishFloorFirework.gameObject.SetActive(true);
+                _finishFloorLight.gameObject.SetActive(true);
+
+            }
+            else
+            {
+                //GameOver
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
