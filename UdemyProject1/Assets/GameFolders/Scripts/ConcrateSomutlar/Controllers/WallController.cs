@@ -1,3 +1,4 @@
+using UdemyProject1.Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -23,7 +24,8 @@ namespace UdemyPorject1.Controllers
                 //Eğer oyuncuyla çarpıştıysa, sahneyi baştan yükle
                 //SceneManager.GetActiveScene().buildIndex => Şu anki sahnenin build index numarasını al
                 //SceneManager.LoadScene() => sahneyi yeniden açar
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
+                // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
+                GameManager.Instance.GameOver();
             }
         }
     }
