@@ -44,11 +44,13 @@ namespace UdemyPorject1.Controllers
         void OnEnable()
         {
             GameManager.Instance.OnGameOver += HandleOnEventTriggered;
+            GameManager.Instance.OnMissionSucced += HandleOnEventTriggered;
         }
 
         void OnDisable()
         {
             GameManager.Instance.OnGameOver -= HandleOnEventTriggered;
+            GameManager.Instance.OnMissionSucced -= HandleOnEventTriggered;
         }
 
         void Update()
@@ -66,7 +68,7 @@ namespace UdemyPorject1.Controllers
             else
             {
                 _canForceUp = false;
-                _fuel.FuelIncrease(0.01f);
+                _fuel.FuelIncrease(0.01f); 
             }
 
             _leftRight = _defaultInput.LeftRight;

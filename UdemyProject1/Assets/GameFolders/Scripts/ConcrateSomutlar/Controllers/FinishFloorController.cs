@@ -23,6 +23,7 @@ namespace UdemyPorject1.Controllers
             {
                 _finishFloorFirework.gameObject.SetActive(true);
                 _finishFloorLight.gameObject.SetActive(true);
+                GameManager.Instance.MissionSucced();
 
             }
             else
