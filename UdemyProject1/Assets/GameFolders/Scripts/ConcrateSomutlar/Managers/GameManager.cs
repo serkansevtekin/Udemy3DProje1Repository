@@ -36,7 +36,7 @@ namespace UdemyProject1.Managers
         ///!= null → bu event’e bir şey abone olmuş mu diye kontrol ediyoruz.
         ///.Invoke() → event’i tetikliyor (çalıştırıyor).
         /// </summary>
-        public void GameOver()
+        public void GameOver() 
         {
             if (OnGameOver != null) //kısa yazımı -> OnGameOver?.Invoke();
             {
