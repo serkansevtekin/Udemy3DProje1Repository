@@ -6,8 +6,11 @@ namespace UdemyPorject1.Controllers
     public class MoverWallsController : WallController
     {
         [SerializeField] Vector3 _direction;
-        [Range(0f, 1f)][SerializeField] float _factor;
+        [SerializeField] float _factor;
+        [SerializeField] float _speed = 1f;
         Vector3 _startPosition;
+
+        const float FULL_CRIClE = Mathf.PI * 2f;
 
         void Awake()
         {
@@ -16,8 +19,12 @@ namespace UdemyPorject1.Controllers
 
         void Update()
         {
+            float cycle = Time.time / _speed;
+            float sinWave = Mathf.Sin(cycle * FULL_CRIClE);
+            _factor = sinWave / 2f + 0.5f;
             Vector3 offset = _direction * _factor;
             transform.position = offset + _startPosition;
+
         }
     }
 

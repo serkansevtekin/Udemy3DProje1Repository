@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6240104760911838203}
   - component: {fileID: 6308304758505723438}
   - component: {fileID: 6185625763238721785}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rockets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 35562505876622470}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 4752405805561319544}
   - component: {fileID: 4752405805575476538}
   - component: {fileID: 4752405805575515290}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CFX4 Sparkles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4759,7 +4759,7 @@ GameObject:
   - component: {fileID: 4752405805550944634}
   - component: {fileID: 4752405805550500282}
   - component: {fileID: 1648670706764915726}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4895,7 +4895,7 @@ GameObject:
   - component: {fileID: 4752405805561319550}
   - component: {fileID: 4752405805575476536}
   - component: {fileID: 4752405805575515288}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CFX4 Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9640,7 +9640,7 @@ GameObject:
   - component: {fileID: 2446419809242779754}
   - component: {fileID: 1182962987067053532}
   - component: {fileID: 3453153770258146685}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Players
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9753,7 +9753,7 @@ GameObject:
   - component: {fileID: 2026134711474579539}
   - component: {fileID: 253284375905273086}
   - component: {fileID: 3043213605672651458}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
