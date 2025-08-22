@@ -5,11 +5,28 @@ namespace UdemyPorject1.Movement
     public class Fuel : MonoBehaviour
     {
         [SerializeField] float _maxFuel = 100f;
-        [SerializeField , Tooltip("Mevcut yakıt miktarı (Sadece debug için)")] float _currentFuel;
+        [SerializeField, Tooltip("Mevcut yakıt miktarı (Sadece debug için)")] float _currentFuel;
 
         [SerializeField] ParticleSystem _particleRocketFire;
 
-        public bool IsEmpty => _currentFuel < 1f;
+        // public float CurrentFUel => _currentFuel / _maxFuel; -> kısa kıllanım
+
+        public float CurrentFuel
+        {
+            get
+            {
+                return _currentFuel / _maxFuel;
+            }
+        }
+
+    
+        public bool IsEmpty
+        {
+            get
+            {
+                return _currentFuel < 1f;
+            }
+        }
         void Awake()
         {
             _currentFuel = _maxFuel;
@@ -19,6 +36,10 @@ namespace UdemyPorject1.Movement
         {
             _currentFuel += increase;
             _currentFuel = Mathf.Min(_currentFuel, _maxFuel);
+
+
+          
+
 
             if (_particleRocketFire.isPlaying)
             {
@@ -30,7 +51,9 @@ namespace UdemyPorject1.Movement
         {
             _currentFuel -= decrease;
             _currentFuel = Mathf.Max(_currentFuel, 0f);
-           
+
+        
+
             if (_particleRocketFire.isStopped)
             {
                 _particleRocketFire.Play();
