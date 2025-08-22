@@ -15,7 +15,7 @@ namespace UdemyProject1.UIs
 
         public void ExitClicked()
         {
-            GameManager.Instance.Exit();
+            GameManager.Instance.Exit(); 
         }
     }
 }
