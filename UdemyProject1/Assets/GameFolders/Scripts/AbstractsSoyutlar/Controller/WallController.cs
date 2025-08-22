@@ -1,10 +1,11 @@
+using UdemyPorject1.Controllers;
 using UdemyProject1.Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace UdemyPorject1.Controllers
+namespace UdemyPorject1.Abstracts.Controllers
 {
-    public class WallController : MonoBehaviour
+    public abstract class WallController : MonoBehaviour
     {   
         //Unity çarpışma konrolü metodu
         void OnCollisionEnter(Collision other)
@@ -28,6 +29,6 @@ namespace UdemyPorject1.Controllers
                 GameManager.Instance.GameOver();
             }
         }
-    }
+    } 
 
 }
