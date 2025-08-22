@@ -26,6 +26,7 @@ namespace UdemyPorject1.Controllers
         public float TurnSpeed => _turnSpeed;
         public float ForceSpeed => _forceSpeed;
 
+        public bool CanMove => _canMove;
 
         private void Awake()
         {

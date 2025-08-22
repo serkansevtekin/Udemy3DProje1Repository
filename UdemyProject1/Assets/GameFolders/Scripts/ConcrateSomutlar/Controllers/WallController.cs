@@ -19,7 +19,7 @@ namespace UdemyPorject1.Controllers
 
             //Çarptığımız nesene oyuncu nesnesimi diye kontrol ediyoruz. 
             //Çünkü sadece PlayerController scripti olan nesneler “oyuncu” kabul ediliyor.
-            if (playerController != null)
+            if (playerController != null && playerController.CanMove)
             {
                 //Eğer oyuncuyla çarpıştıysa, sahneyi baştan yükle
                 //SceneManager.GetActiveScene().buildIndex => Şu anki sahnenin build index numarasını al
