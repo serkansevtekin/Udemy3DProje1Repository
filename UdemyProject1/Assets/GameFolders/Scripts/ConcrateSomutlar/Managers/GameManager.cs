@@ -1,47 +1,44 @@
 using System.Collections;
+using UdemyPorject1.Abstracts.Utilities;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace UdemyProject1.Managers
 {
-    public class GameManager : MonoBehaviour
+    public class GameManager : SingletonThisObject<GameManager>
     {
         public event System.Action OnGameOver;
         public event System.Action OnMissionSucced;
-        public static GameManager Instance { get; private set; }//Instance - örneğini al demek
 
         private void Awake()
         {
 
-            SingeltonThisGameObject();
+            SingletonThisGameObject(this);
+           
         }
 
-        private void SingeltonThisGameObject()
-        {
-            //daha önce hiç oluşmamışsa oluştur (Tekil oluyor)
-            if (Instance == null)
-            {
-                Instance = this;// bu ilk oluşan game managerin referansını bu instance ata
-                DontDestroyOnLoad(this.gameObject);// sahne geçişlerinde bunu yok etme
-            }
-            else
-            {
-                //aynı gameManager den 2,3,4... tane oluşmaya çalışırsa yok et
-                Destroy(this.gameObject);
-            }
-        }
+
 
         /// <summary>
         /// OnGameOver → senin event’in.
         ///!= null → bu event’e bir şey abone olmuş mu diye kontrol ediyoruz.
         ///.Invoke() → event’i tetikliyor (çalıştırıyor).
         /// </summary>
-        public void GameOver() 
+        public void GameOver()
         {
             if (OnGameOver != null) //kısa yazımı -> OnGameOver?.Invoke();
             {
+
                 OnGameOver.Invoke();//Eventi tetikle
+
             }
+
+            if (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCountInBuildSettings - 1)
+            {
+                Debug.Log("Son Sahne");
+                
+            }
+            
 
         }
 
@@ -53,6 +50,14 @@ namespace UdemyProject1.Managers
                 OnMissionSucced.Invoke();
 
             }
+
+         if (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCountInBuildSettings - 1)
+            {
+                Debug.Log("Son Sahne");
+                
+            }
+            
+
         }
 
         public void LoadLevelScene(int levelIndex = 0)
@@ -62,8 +67,12 @@ namespace UdemyProject1.Managers
 
         private IEnumerator LoadLevelScreneAsync(int levelIndexNo)
         {
-            yield return SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + levelIndexNo);
+            SoundManager.Instance.StopSound(1);
 
+            int nexSceneIndex = SceneManager.GetActiveScene().buildIndex + levelIndexNo;
+    
+            yield return SceneManager.LoadSceneAsync(nexSceneIndex);
+            SoundManager.Instance.PlaySound(2);
         }
 
         public void LoadMenuScene()
@@ -73,7 +82,9 @@ namespace UdemyProject1.Managers
 
         private IEnumerator LoadMenuSceneAsync()
         {
+            SoundManager.Instance.StopSound(2);
             yield return SceneManager.LoadSceneAsync("Menu");
+            SoundManager.Instance.PlaySound(1);
         }
 
 

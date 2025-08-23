@@ -1,3 +1,4 @@
+using UdemyProject1.Managers;
 using UnityEngine;
 
 namespace UdemyPorject1.Movement
@@ -38,13 +39,15 @@ namespace UdemyPorject1.Movement
             _currentFuel = Mathf.Min(_currentFuel, _maxFuel);
 
 
-          
+
 
 
             if (_particleRocketFire.isPlaying)
             {
                 _particleRocketFire.Stop();
             }
+
+            SoundManager.Instance.StopSound(0);
         }
 
         public void FuelDecrease(float decrease)
@@ -52,13 +55,15 @@ namespace UdemyPorject1.Movement
             _currentFuel -= decrease;
             _currentFuel = Mathf.Max(_currentFuel, 0f);
 
-        
+
 
             if (_particleRocketFire.isStopped)
             {
                 _particleRocketFire.Play();
 
             }
+
+            SoundManager.Instance.PlaySound(0);
         }
     }
 
